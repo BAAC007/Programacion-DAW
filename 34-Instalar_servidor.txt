@@ -1,0 +1,14 @@
+#Instalar un servidor web en ENTORNOS DE DESARROLLO
+(se entiende vuestro propio ordenador)
+
+#windows:
+Se recomienda instalar el paquete XAMPP
+https://www.apachefriends.org/es/index.html
+
+Una vez instalada, la carpeta de publicación es c:/xampp/htdocs
+
+-Linux:
+Se instala Apache con el comando
+sudo apt install apache2
+
+Una vez instalada, la carpeta de publicación es /var/www/html

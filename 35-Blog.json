@@ -1,0 +1,27 @@
+[
+    {
+        "Titulo":"Primer Articulo",
+        "Fecha":"2025-10-16",
+        "Autor":"Bryan Avila",
+        "contenido":"Este es el contenido del primer articulo"
+    },
+    {
+        "Titulo":"Segundo Articulo",
+        "Fecha":"2025-10-16",
+        "Autor":"Bryan Avila",
+        "contenido":"Este es el contenido del segundo articulo"
+    },
+    {
+        "Titulo":"Tercer Articulo",
+        "Fecha":"2025-10-16",
+        "Autor":"Bryan Avila",
+        "contenido":"Este es el contenido del tercer articulo"
+    },
+    {
+        "Titulo":"Cuarto Articulo",
+        "Fecha":"2025-10-16",
+        "Autor":"Bryan Avila",
+        "contenido":"Este es el contenido del cuarto articulo"
+    }
+    
+]
