@@ -1,0 +1,80 @@
+#importamos la base de datos
+import mysql.connector
+
+#Conexion y cursor:
+conexion = mysql.connector.connect(
+  host="localhost",
+  user="portafolioceac",
+  password="portafolioceac",
+  database="portafolioceac"
+  )
+cursor = conexion.cursor()
+
+#Comenzamos:
+print("Bienvenidos a la aplicacion")
+
+#Creamos el bucle infinito:
+while True:
+    print("Selecciona una opcion:")
+    print("1.-Crear un registro")
+    print("2.-Listar registros")
+    print("3.-Actualiar registro")
+    print("4.-Eliminar registro")
+
+    opcion = int(input("Elige tu opcion: "))
+
+    #Creamos if - elif:
+        if opcion == 1:
+            #Insertamos:
+            titulo = input("Introduce el titulo: ")
+            descripcion = input("Introduce la descripcion: ")
+            imagen = input("Introduce la imagen: ")
+            url = input("Introduce la url: ")
+            id_categoria = input("Introduce la categoria: ")
+            cursor.execute('''
+            INSERT INTO Piezas VALUES (
+            NULL,
+            "'''+titulo+'''",
+            "'''+descripcion+'''",
+            "'''+imagen+'''",
+            "'''+url+'''",
+            '''+id_categoria+'''
+            );
+            ''')
+    conexion.commit()
+  
+        elif opcion == 2:
+            #seleccionamos:
+            cursor = conexion.cursor()
+            cursor.execute('''SELECT * FROM Piezas;''')
+            filas = cursor.fetchall()
+            for fila in filas:
+                print(fila)
+  
+        elif opcion == 3:
+            #Actualizamos:
+            identificador = input("Introduce el id a actualizar: ")
+            titulo = input("Introduce el titulo: ")
+            descripcion = input("Introduce la descripcion: ")
+            imagen = input("Introduce la imagen: ")
+            url = input("Introduce la url: ")
+            id_categoria = input("Introduce la categoria: ")
+            cursor.execute('''
+            UPDATE Piezas SET 
+            titulo = "'''+titulo+'''",
+            descripcion = "'''+descripcion+'''",
+            imagen = "'''+imagen+'''",
+            url = "'''+url+'''",
+            id_categoria = '''+id_categoria+'''
+            WHERE Identificador = '''+identificador+''';
+            ''')
+            conexion.commit()
+  
+        elif opcion == 4:
+            #Eliminamos:
+            identificador = input("Introduce el id a eliminar: ")
+            cursor.execute('''
+            DELETE FROM Piezas
+            WHERE Identificador = '''+identificador+'''
+            ''')
+            conexion.commit()
