@@ -1,0 +1,34 @@
+<script>
+    /*
+    Programa del cronista por el tiempo
+    V0.1 Bryan Alejandro Avila Castro
+    Programa que clasifica cada anio en una epoca historica y imprime un breve resumen
+    */
+
+    var cronista = prompt("Ingrese el nombre del cronista aventurero que se ejercita a traves de las epocas: ");
+    var anio_inicio = parseInt(prompt("Ingrese el anio de inicio: "));
+    var anio_final = parseInt(prompt("Ingrese el anio final: "));
+
+    function clasificar_Etapa(anio){
+        if(473 <= anio && anio < 1300){
+            return "Edad media";
+        }
+        else if(1300 <= anio && anio < 1550){
+            return "El Renacimiento";
+        }
+        else if(1550 <= anio && anio < 1760){
+            return "Edad moderna";
+        }
+        else if(1760 <= anio && anio < 1840){
+            return "Revolucion industrial";
+        }
+        else{
+            return "Otras epocas";
+        }
+    }
+    for(var anio = anio_inicio ; anio <= anio_final ; anio++){
+        var etapa = clasificar_Etapa(anio);
+        document.write("El anio: ", anio, ", esta en la etapa historica: ", etapa, "<br>");
+    }
+
+</script>

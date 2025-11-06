@@ -1,0 +1,27 @@
+<script>
+    const anioInicio = parseInt(prompt("Introduce el año de inicio:"));
+    const anioFin = parseInt(prompt("Introduce el año de fin:"));
+    const nombreCronista = prompt("Introduce el nombre del cronista (opcional):");
+
+    function clasificarEtapa(anio) {
+        if (anio >= 1000 && anio < 1500) {
+            return "Edad Media";
+        } else if (anio >= 1500 && anio < 1789) {
+            return "Renacimiento";
+        } else if (anio >= 1789 && anio < 1848) {
+            return "Revolución Industrial";
+        } else {
+            return "Otras etapas";
+        }
+    }
+
+    for (let anio = anioInicio; anio <= anioFin; anio++) {
+        const etapa = clasificarEtapa(anio);
+        console.log(`El año ${anio} está en la etapa histórica: ${etapa}`);
+    }
+
+    if (nombreCronista) {
+        console.log(`Cronista: ${nombreCronista}`);
+    }
+
+</script>

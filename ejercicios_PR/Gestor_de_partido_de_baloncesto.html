@@ -1,0 +1,51 @@
+<script>
+    /*
+    Programa Gestor de Partido de Baloncesto
+    V0.1 Bryan Alejandro Avila Castro
+    Programa que simula un partido entre dos equipos
+    */
+
+    let equipo_1 = prompt("Indique el nombre del primer equipo: ");
+    let equipo_2 = prompt("Indique el nombre del segundo equipo: ");
+
+    let puntos_equipo_1 = 0;
+    let puntos_equipo_2 = 0;
+
+    document.write("<br>", equipo_1 + puntos_equipo_1 + " : " + puntos_equipo_2 + equipo_2, "<br>");
+
+    function punto(nombreEquipo){
+        if (nombreEquipo === equipo_1){
+            puntos_equipo_1++;
+            document.write(nombreEquipo + " anota un punto . Puntos: " + puntos_equipo_1 + "<br>");
+        }
+        else if(nombreEquipo === equipo_2){
+            puntos_equipo_2++;
+            document.write(nombreEquipo + " anota un punto . Puntos: " + puntos_equipo_2 + "<br>");
+        }
+    }
+
+    function partido(){
+        for(let tirada = 1; tirada <= 20; tirada++){
+            document.write("<br><br> Voy a hacer una tirada ");
+            var paraEquipo = Math.random();
+            if (paraEquipo < 0.5){
+                punto(equipo_1);
+            }
+            else{
+                punto(equipo_2);
+            }
+        }
+
+    }
+
+    partido();
+    document.write("<br><br>El marcador final es: " + equipo_1 + " " + puntos_equipo_1 + " : " + puntos_equipo_2 + " " + equipo_2, "<br>");
+    if (puntos_equipo_1 > puntos_equipo_2){
+        document.write("El ganador es: " + equipo_1);
+    }
+    else{
+        document.write("El ganador es: " + equipo_2);
+    }
+
+
+</script>
